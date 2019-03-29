@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Icon } from 'antd';
+import 'antd/dist/antd.css';
 import logo from './logo.svg';
 import './App.css';
 
@@ -19,6 +21,7 @@ class App extends Component {
           >
             Learn React
           </a>
+          <Icon type="dashboard" />
         </header>
       </div>
     );

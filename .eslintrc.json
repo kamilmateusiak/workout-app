@@ -1,0 +1,124 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
+  },
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true,
+    "jest": true
+  },
+  "globals": {
+    "_": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:react-redux/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:redux-saga/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "plugins": ["prettier", "babel", "@typescript-eslint", "react-redux", "redux-saga", "react-hooks"],
+  "rules": {
+    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "no-multi-str": "off",
+    "no-restricted-globals": "warn",
+    "jsx-a11y/accessible-emoji": "off",
+    "jsx-a11y/alt-text": "warn",
+    "jsx-a11y/anchor-has-content": "warn",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/aria-activedescendant-has-tabindex": "off",
+    "jsx-a11y/aria-props": "off",
+    "jsx-a11y/aria-proptypes": "off",
+    "jsx-a11y/aria-role": "off",
+    "jsx-a11y/aria-unsupported-elements": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/heading-has-content": "warn",
+    "jsx-a11y/html-has-lang": "off",
+    "jsx-a11y/iframe-has-title": "off",
+    "jsx-a11y/img-redundant-alt": "off",
+    "jsx-a11y/interactive-supports-focus": "off",
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/media-has-caption": "off",
+    "jsx-a11y/mouse-events-have-key-events": "off",
+    "jsx-a11y/no-access-key": "off",
+    "jsx-a11y/no-autofocus": "off",
+    "jsx-a11y/no-distracting-elements": "off",
+    "jsx-a11y/no-interactive-element-to-noninteractive-role": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
+    "jsx-a11y/no-noninteractive-tabindex": "off",
+    "jsx-a11y/no-onchange": "warn",
+    "jsx-a11y/no-redundant-roles": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/role-has-required-aria-props": "off",
+    "jsx-a11y/role-supports-aria-props": "off",
+    "jsx-a11y/scope": "off",
+    "jsx-a11y/tabindex-no-positive": "warn",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".tsx"] }],
+    "react/jsx-indent": "off",
+    "react/jsx-handler-names": 1,
+    "react/no-multi-comp": [0, { "ignoreStateless": true }],
+    "react/forbid-prop-types": "warn",
+    "react/prefer-stateless-function": [true, { "ignorePureComponents": true }],
+    "react/destructuring-assignment": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-wrap-multilines": ["error", { "arrow": true, "return": true, "declaration": true }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    "import/extensions": ["error", { "ignore": ["ts", "tsx"] }],
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["test/**/*", "**/*.spec.ts", "**/*.spec.tsx", "**/*.spec.js", "**/*.spec.jsx"] }
+    ],
+    "babel/no-invalid-this": 1,
+    "babel/object-curly-spacing": ["error", "always"],
+    "babel/quotes": ["error", "single", { "avoidEscape": true }],
+    "babel/no-unused-expressions": 1,
+    "@typescript-eslint/interface-name-prefix": ["warn", "always"],
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-empty-interface": "warn",
+    "redux-saga/no-unhandled-errors": "off",
+    "react-redux/prefer-separate-component-file": "off"
+  },
+  "settings": {
+    "ecmascript": 6,
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".tsx", ".ts"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.{ts,tsx}"],
+      "parser": "@typescript-eslint/parser",
+      "rules": {
+        "no-undef": "off",
+        "no-unused-vars": "off",
+        "react/prop-types": "off",
+        "no-use-before-define": "off"
+      }
+    },
+    {
+      "files": ["**/*.ts"],
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": false
+        }
+      },
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "warn"
+      }
+    }
+  ]
+}

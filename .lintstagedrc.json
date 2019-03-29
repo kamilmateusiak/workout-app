@@ -1,0 +1,5 @@
+{
+  "linters": {
+    "source/**/*.{js,jsx,tsx,ts}": ["prettier --write", "eslint --fix --ext .js,.jsx,.tsx,.ts", "git add"]
+  }
+}
