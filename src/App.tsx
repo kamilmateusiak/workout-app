@@ -1,14 +1,20 @@
 /** @jsx jsx */
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { jsx, css } from '@emotion/core'
 import 'antd/dist/antd.css';
-import logo from './logo.svg';
-import './App.css';
 import { Navigation } from './components/Navigation';
+import { Home } from './routes/Home';
+import { Exercises } from './routes/Exercises';
 
 const appWrapper = css`
   display: flex;
+  flex-wrap: nowrap;
+`;
+
+const contentWrapper = css`
+  flex: 1;
+  height: 100vh;
 `;
 
 class App extends React.Component {
@@ -17,21 +23,9 @@ class App extends React.Component {
       <Router>
         <div css={appWrapper}>
           <Navigation />
-          <div className="App">
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <p>
-                Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn React
-              </a>
-            </header>
+          <div css={contentWrapper}>
+            <Route exact path="/" component={Home} />
+            <Route path="/exercises" component={Exercises} />
           </div>
         </div>
       </Router>
