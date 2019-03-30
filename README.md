@@ -1,3 +1,12 @@
+<h1>Workout App</h1>
+
+This project was created for the purpose of learning a few things recently used in modern react apps:
+- react hooks - components would be created only as Functional Components (no class at all)
+- redux-saga - requests to external apis would be sent with generators
+- emotion - app will allow to change theme (dark, default etc), styles will be applied to components with css from react-emotion
+
+------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
