@@ -4,6 +4,7 @@ import { reducers } from './reducers';
 import createSagaMiddleware from 'redux-saga';
 import { entitiesSagas } from './entities';
 import { viewsSagas } from './views/sagas';
+import { featuresSagas } from './features';
 
 export const sagaMiddleware = createSagaMiddleware();
 
@@ -16,3 +17,4 @@ export const store = createStore(reducers, composeEnhancers(applyMiddleware(...m
 
 sagaMiddleware.run(entitiesSagas);
 sagaMiddleware.run(viewsSagas);
+sagaMiddleware.run(featuresSagas);

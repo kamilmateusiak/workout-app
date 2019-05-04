@@ -9,6 +9,12 @@ import { Exercises } from './routes/Exercises';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import { Exercise, IExerciseRouteParams } from './routes/Exercise';
+import { Register } from './routes/Register';
+import { Login } from './routes/Login';
+import { ProtectedRoute } from './containers/Routes';
+import { AuthProvider } from './containers/Auth';
+import { BeforeAuthRoute } from './containers/Routes/BeforeAuthRoute';
+import { Dashboard } from './routes/Dashboard';
 
 const appWrapper = css`
   display: flex;
@@ -25,14 +31,19 @@ class App extends React.Component {
     return (
       <Router>
         <Provider store={store}>
-          <div css={appWrapper}>
-            <Navigation />
-            <div css={contentWrapper}>
-              <Route exact path="/" component={Home} />
-              <Route path="/exercises" component={Exercises} />
-              <Route path="/exercise/:id" render={routeProps => <Exercise {...routeProps} />}/>
+          <AuthProvider>
+            <div css={appWrapper}>
+              <Navigation />
+              <div css={contentWrapper}>
+                <BeforeAuthRoute exact path="/" component={Home} />
+                <BeforeAuthRoute path="/login" component={Login} />
+                <BeforeAuthRoute path="/register" component={Register} />
+                <ProtectedRoute path="/dashboard" component={Dashboard} />
+                <ProtectedRoute path="/exercises" component={Exercises} />
+                <ProtectedRoute path="/exercise/:id" component={Exercise}/>
+              </div>
             </div>
-          </div>
+          </AuthProvider>
         </Provider>
       </Router>
     );

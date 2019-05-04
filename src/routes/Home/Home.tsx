@@ -2,6 +2,7 @@
 import React from 'react';
 import logoImage from './logo.svg';
 import { jsx, css, keyframes } from '@emotion/core'
+import { Link } from 'react-router-dom';
 
 const container = css`
   text-align: center;
@@ -30,7 +31,7 @@ const header = css`
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fff;
 `;
 
 const link = css`
@@ -53,6 +54,7 @@ export const Home: React.FC = () => {
         >
           Learn React
         </a>
+        <Link to="/login">Login</Link>
       </header>
   </div>
   );

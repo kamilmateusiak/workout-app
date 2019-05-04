@@ -1,8 +1,8 @@
 export const NAVIGATION_ITEMS = [
   {
-    id: 'home',
-    name: 'Home',
-    path: '/',
+    id: 'dashboard',
+    name: 'Dashboard',
+    path: '/dashboard',
     iconName: 'home'
   },
   {

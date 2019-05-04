@@ -68,7 +68,7 @@ export default class ApiClient implements IApiClient {
           ...options.headers
         },
         method: options.method,
-        body: JSON.stringify(options.body)
+        body: options.body
       };
 
       const response = await fetch(fullPath, fetchOptions);
